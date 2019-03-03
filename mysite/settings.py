@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+	'flight',
 ]
 
 MIDDLEWARE = [
@@ -74,18 +75,29 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
 DATABASES = {
-	'default': {
-		'OPTIONS': {
-			'Driver': "ODBC Driver 13 for SQL Server"
-		},
-		'Server': "tcp:pikabu.database.windows.net,1433",
-		'Database': "flights",
-		'Uid': "linkouth@pikabu",
-		'Pwd': "Tt_89198343076",
-		'Encrypt': "yes",
-		'TrustServerCertificate': "no",
-		'Connection Timeout': "30",
+    'default': {
+        'ENGINE': 'sql_server.pyodbc',
+        'NAME': 'mysite',
+        'USER': 'user',
+        'PASSWORD': 'user',
+        'HOST': 'ADMIN-ПК',
+        'OPTIONS': {
+            'driver': 'ODBC Driver 13 for SQL Server',
+        },
 	}
+	#'default': {
+	#	'OPTIONS': {
+	#		'Driver': "ODBC Driver 13 for SQL Server"
+	#	},
+	#	'ENGINE': 'sql_server.pyodbc',
+	#	'Server': "tcp:pikabu.database.windows.net,1433",
+	#	'NAME': "flights",
+	#	'Uid': "linkouth@pikabu",
+	#	'Pwd': "Tt_89198343076",
+	#	'Encrypt': "yes",
+	#	'TrustServerCertificate': "no",
+	#	'Connection Timeout': "30",
+	#}
 	#'default': {
     #    'ENGINE': 'django.db.backends.sqlite3',
     #    'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
