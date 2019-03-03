@@ -51,4 +51,4 @@ class Flight(models.Model):
     airport_arrivial = models.ForeignKey(Airport, models.SET_NULL, blank=True, null=True, related_name='+')
 
     def __str__(self):
-        return self.flight_number
+        return str(self.flight_number)

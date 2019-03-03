@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Hello world!</h3>
+    <form action="{% url 'proc1' %}" method="post">
+    {% csrf_token %}
+        <label for="param">Параметр</label>
+        <input type="text" name="param">
+    <input type="submit" value="Выполнить">
+    </form>
+</body>
+</html>
