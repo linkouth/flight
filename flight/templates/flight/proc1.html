@@ -1,15 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-{{ param }}
-{% for row in rows %}
-    {% for item in row %}
-        {{ item }}
-    {% endfor %}
-{% endfor %}
+<div class="container">
+    <h3 style="margin-top: 20px">Вы искали: {{ param }} </h3>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Номер рейса</th>
+            <th>Время отправления</th>
+            <th>Время прибытия</th>
+            <th>Аэропорт отправления</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for row in rows %}
+            <tr>
+                {% for item in row %}
+                    <td> {{ item }} </td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
 </body>
 </html>

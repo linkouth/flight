@@ -1,30 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-<h3>Proc1</h3>
+<div class="container">
+    <h4>Рейсы с городом вылета: </h4>
     <form action="{% url 'proc1' %}" method="post">
-    {% csrf_token %}
-        <label for="param">Параметр</label>
-        <input type="text" name="param">
-    <input type="submit" value="Выполнить">
+        {% csrf_token %}
+        <div class="form-group row">
+            <label for="param" class="col-form-label col-md-2">Город</label>
+            <div class="col-md-4">
+                <input class="form-control" type="text" name="param">
+            </div>
+            <button class="btn btn-info" type="submit">Найти</button>
+        </div>
     </form>
-<h3>Proc2</h3>
+    <h4>Proc2</h4>
     <form action="{% url 'proc2' %}" method="post">
-    {% csrf_token %}
+        {% csrf_token %}
         <label for="param">Параметр</label>
         <input type="text" name="param">
-    <input type="submit" value="Выполнить">
+        <input type="submit" value="Выполнить">
     </form>
-<h3>Proc3</h3>
-    <form action="{% url 'proc3' %}" method="post">
-    {% csrf_token %}
-        <label for="param">Параметр</label>
-        <input type="text" name="param">
-    <input type="submit" value="Выполнить">
-    </form>
+    {#<h3>Proc3</h3>#}
+    {#    <form action="{% url 'proc3' %}" method="post">#}
+    {#    {% csrf_token %}#}
+    {#        <label for="param">Параметр</label>#}
+    {#        <input type="text" name="param">#}
+    {#    <input type="submit" value="Выполнить">#}
+    {#    </form>#}
+</div>
 </body>
 </html>

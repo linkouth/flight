@@ -28,12 +28,12 @@ def proc2(request):
     })
 
 
-# def proc3(request):
-#     param = request.POST['param']
-#     with connection.cursor() as cursor:
-#         cursor.execute("declare @a int; exec @a = proc4 %s; if (@a = 1) return 't' else return 'f'", [param])
-#         rows = cursor.fetchall()
-#     return render(request, 'flight/proc1.html', {
-#         'param': param,
-#         'rows': rows,
-#     })
+def proc3(request):
+    param = request.POST['param']
+    with connection.cursor() as cursor:
+        cursor.execute("declare @a int; exec @a = proc4 %s; if (@a = 1) return 't' else return 'f'", [param])
+        rows = cursor.fetchall()
+    return render(request, 'flight/proc1.html', {
+        'param': param,
+        'rows': rows,
+    })
