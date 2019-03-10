@@ -19,20 +19,39 @@
             <button class="btn btn-info" type="submit">Найти</button>
         </div>
     </form>
-    <h4>Proc2</h4>
+    <h4>Проверка рейса</h4>
+    <form action="{% url 'proc4' %}" method="post">
+        {% csrf_token %}
+        <div class="form-group row">
+            <label for="param" class="col-form-label col-md-2">Id рейса</label>
+            <div class="col-md-4">
+                <input class="form-control" type="text" name="param">
+            </div>
+            <button class="btn btn-info" type="submit">Испытай удачу</button>
+        </div>
+    </form>
+    <h4>Места в самолете</h4>
     <form action="{% url 'proc2' %}" method="post">
         {% csrf_token %}
-        <label for="param">Параметр</label>
-        <input type="text" name="param">
-        <input type="submit" value="Выполнить">
+        <div class="form-group row">
+            <label for="param" class="col-form-label col-md-2">Название модели</label>
+            <div class="col-md-4">
+                <input class="form-control" type="text" name="param">
+            </div>
+            <button class="btn btn-info" type="submit">Найти</button>
+        </div>
     </form>
-    {#<h3>Proc3</h3>#}
-    {#    <form action="{% url 'proc3' %}" method="post">#}
-    {#    {% csrf_token %}#}
-    {#        <label for="param">Параметр</label>#}
-    {#        <input type="text" name="param">#}
-    {#    <input type="submit" value="Выполнить">#}
-    {#    </form>#}
+    <h4>Статус рейса</h4>
+    <form action="{% url 'proc5' %}" method="post">
+        {% csrf_token %}
+        <div class="form-group row">
+            <label for="param" class="col-form-label col-md-2">Id рейса</label>
+            <div class="col-md-4">
+                <input class="form-control" type="text" name="param">
+            </div>
+            <button class="btn btn-info" type="submit">Найти</button>
+        </div>
+    </form>
 </div>
 </body>
 </html>
